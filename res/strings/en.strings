@@ -1,0 +1,8 @@
+[strings]
+information = Information
+no_data = No data.
+system_error = There was an unexpected error while connecting to the server. Please try again later.
+add_template_card_successful = Add template card successful!
+create_brand_successful_format = Create %s successful!
+facebook_connect_successful_format = Connect "%s" page successful!
+invite_users_successful = Invite successful!

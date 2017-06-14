@@ -1,10 +1,29 @@
 #!/usr/bin/env python
-import os
-import sys
+from bottle import *
 
-if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "gettingstarted.settings")
+app = application = default_app()
 
-    from django.core.management import execute_from_command_line
+def start_xloyalty_main_services():
+	# app.merge(social_app)
+	# httpserver.serve(app, host = '0.0.0.0', port = '8080')
+	run(app, host = '0.0.0.0', port = '8080')
 
-    execute_from_command_line(sys.argv)
+@app.route('/images')
+def root_index():
+	return getImage()
+
+def getImage():
+	# image_buffer = BytesIO()
+	# pi_camera.capture(image_buffer, format='png') # This works without a problem
+
+	imgPath = "res/images/a.jpg"
+	fp = open(imgPath, "rb")
+
+	bytes = fp.read()
+	response.set_header('Content-type', 'image/png')
+	print(len(bytes))
+	fp.close()
+	return bytes
+
+# getImage()
+start_xloyalty_main_services()

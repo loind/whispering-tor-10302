@@ -1,0 +1,8 @@
+[strings]
+information = Thông báo
+no_data = Không có dữ liệu.
+system_error = Có lỗi trong quá trình kết nối đến server. Vui lòng thử lại sau.
+add_template_card_successful = Thêm thẻ mẫu thành công!
+create_brand_successful_format = Tạo "%s" thành công!
+facebook_connect_successful_format = Kết nối page "%s" thành công!
+invite_users_successful = Đã gửi lời mời thành công!
