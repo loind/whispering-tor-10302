@@ -8,6 +8,7 @@ def index():
 	print('abc')
 	return "Hello"
 
+@route('/images')
 def getImage():
 	# image_buffer = BytesIO()
 	# pi_camera.capture(image_buffer, format='png') # This works without a problem
