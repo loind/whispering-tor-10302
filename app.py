@@ -1,18 +1,19 @@
 import bottle
-from bottle import default_app, request, route, response, get
+
+APP = bottle.default_app()
 
 bottle.debug(True)
 
-@route('/<filename:path>')
-def send_static(filename):
-    return static_file(filename, root=".")
-
-@get('/')
+@APP.route('/')
 def index():
-	print('abc')
-	return "Hello"
+	return '<p>Hello</p>'
 
-@route('/images')
+@APP.route('/index.html')
+def index():
+	bottle.response.content_type = 'text/html'
+	return bottle.static_file('index.html', '.')
+  
+@APP.route('/images')
 def getImage():
 	# image_buffer = BytesIO()
 	# pi_camera.capture(image_buffer, format='png') # This works without a problem
@@ -27,5 +28,5 @@ def getImage():
 	return bytes
 
 
-run(default_app(), host='0.0.0.0', port=8080)
-# bottle.run(host='0.0.0.0', port=8080)
+if __name__ == '__main__':
+	bottle.run(application=APP)
