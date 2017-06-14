@@ -8,6 +8,7 @@ def start_xloyalty_main_services():
 	# httpserver.serve(app, host = '0.0.0.0', port = '8080')
 	# run(app, host = 'whispering-tor-10302.herokuapp.com', port = '8080')
 	# run(app, host = '0.0.0.0', port = '8080')
+	pass
 
 @app.route('/images')
 def root_index():
