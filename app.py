@@ -3,6 +3,10 @@ from bottle import default_app, request, route, response, get
 
 bottle.debug(True)
 
+@route('/<filename:path>')
+def send_static(filename):
+    return static_file(filename, root=".")
+
 @get('/')
 def index():
 	print('abc')
@@ -22,4 +26,6 @@ def getImage():
 	fp.close()
 	return bytes
 
-bottle.run(host='0.0.0.0', port=8080)
+
+run(default_app(), host='0.0.0.0', port=8080)
+# bottle.run(host='0.0.0.0', port=8080)
