@@ -5,7 +5,8 @@ bottle.debug(True)
 
 @get('/')
 def index():
-	return ret
+	print('abc')
+	return "Hello"
 
 def getImage():
 	# image_buffer = BytesIO()
