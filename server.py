@@ -15,14 +15,11 @@ def index():
   
 @APP.route('/images')
 def getImage():
-	# image_buffer = BytesIO()
-	# pi_camera.capture(image_buffer, format='png') # This works without a problem
-
 	imgPath = "res/images/a.jpg"
 	fp = open(imgPath, "rb")
 
 	bytes = fp.read()
-	response.set_header('Content-type', 'image/png')
+	bottle.response.set_header('Content-type', 'image/png')
 	print(len(bytes))
 	fp.close()
 	return bytes
