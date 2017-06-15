@@ -1,4 +1,4 @@
-import bottle
+from bottle import *
 
 APP = bottle.default_app()
 
