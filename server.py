@@ -1,4 +1,5 @@
-from bottle import *
+import bottle
+import request
 
 APP = bottle.default_app()
 
