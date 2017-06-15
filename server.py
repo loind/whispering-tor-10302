@@ -1,9 +1,6 @@
-import bottle
-import request
+from bottle import *
 
-APP = bottle.default_app()
-
-bottle.debug(True)
+APP = default_app()
 
 @APP.route('/')
 def index():
@@ -11,8 +8,8 @@ def index():
 
 @APP.route('/index.html')
 def index():
-	bottle.response.content_type = 'text/html'
-	return bottle.static_file('index.html', '.')
+	response.content_type = 'text/html'
+	return static_file('index.html', '.')
   
 @APP.route('/images')
 def getImage():
@@ -22,11 +19,11 @@ def getImage():
 	fp = open(imgPath, "rb")
 
 	bytes = fp.read()
-	bottle.response.set_header('Content-type', 'image/png')
+	response.set_header('Content-type', 'image/png')
 	print(len(bytes))
 	fp.close()
 	return bytes
 
 
 if __name__ == '__main__':
-	bottle.run(application=APP)
+	run(application=APP)
