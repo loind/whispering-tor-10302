@@ -15,6 +15,8 @@ def index():
   
 @APP.route('/images')
 def getImage():
+	print("User read: %s" % request.query)
+
 	imgPath = "res/images/a.jpg"
 	fp = open(imgPath, "rb")
 
