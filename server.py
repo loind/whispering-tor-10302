@@ -13,7 +13,10 @@ def index():
   
 @APP.route('/images')
 def getImage():
-	print("User read: %s" % request.query)
+	try:
+		print("User read: %s" % request.query.userid)
+	except Exception as e:
+		pass
 
 	imgPath = "res/images/a.jpg"
 	fp = open(imgPath, "rb")
