@@ -27,7 +27,7 @@ def getImage():
 	fp.close()
 	return bytes
 
-@APP.route('/1.0' + '/callbacks/fb')
+@APP.route('/1.0' + '/callbacks/fb', methods=['GET', 'POST'])
 def facebook_callback():
 	print(request.json)
 	pass
