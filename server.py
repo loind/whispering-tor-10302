@@ -30,7 +30,7 @@ def getImage():
 @APP.route('/1.0' + '/callbacks/fb', ['GET', 'POST'])
 def facebook_callback():
 	print(request.json)
-	return '<p>OK</p>'
+	return 'mobio'
 
 
 if __name__ == '__main__':
