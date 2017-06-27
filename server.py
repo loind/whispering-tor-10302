@@ -29,4 +29,4 @@ def getImage():
 
 
 if __name__ == '__main__':
-	run(application=APP)
+	run(application=APP, host = '0.0.0.0', port = '8080')
