@@ -1,6 +1,18 @@
 from bottle import *
 
+ACCESS_CONTROL_ALLOW_ORIGIN = '*'
+ACCESS_CONTROL_ALLOW_METHODS = 'PUT, GET, POST, DELETE, OPTIONS'
+ACCESS_CONTROL_ALLOW_HEADERS = 'access-control-allow-headers,access-control-allow-methods,access-control-allow-origin,Authorization,content-type'
+ACCESS_CONTROL_EXPOSE_HEADERS = 'Authorization'
+
 APP = default_app()
+
+@APP.hook('after_request')
+def hook():
+	response.headers['Access-Control-Allow-Origin'] = ACCESS_CONTROL_ALLOW_ORIGIN
+	response.headers['Access-Control-Allow-Methods'] = ACCESS_CONTROL_ALLOW_METHODS
+	response.headers['Access-Control-Allow-Headers'] = ACCESS_CONTROL_ALLOW_HEADERS
+	response.headers['Access-Control-Expose-Headers'] = ACCESS_CONTROL_EXPOSE_HEADERS
 
 @APP.route('/')
 def index():
