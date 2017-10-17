@@ -47,6 +47,14 @@ def facebook_callback():
 	verify_token = "mobio"
 	return verify_token
 
+@APP.route('/1.0' + '/callbacks/zalo', 'GET')
+def zalo_callback():
+	print("OK")
+	print("url: %s" % request.fullpath)
+	print("=== body ===")
+	for item in request.forms:
+		print(item)
+	print("=== end body ===")
 
 if __name__ == '__main__':
 	run(application=APP, host = '0.0.0.0', port = '8080')
